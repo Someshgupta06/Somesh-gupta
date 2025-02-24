@@ -1,0 +1,633 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  position: fixed;      /* Fix navbar at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;        /* Ensure it stays above other elements */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 90px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: gray;
+}
+
+.nav-links a:hover {
+  color: rgb(49, 48, 48);
+}
+
+.talk-btn {
+  background: yellow;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      width: 100%;
+      padding: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .menu-btn {
+      display: block;
+  }
+}
+
+/* Centering Hero Section */
+.hero-container {
+  margin-top: 70px; /* Adjust based on your navbar's height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px); /* Adjust the height to account for the navbar */
+  width: 100%;
+}
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  padding: 50px;
+  border-radius: 10px;
+  position: relative;
+
+  /* Background Image */
+  background: url('assets/background-image.jpg') center/cover no-repeat;
+ 
+}
+
+
+/* Blur Effect */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* Black Overlay */
+  backdrop-filter: blur(2px); /* Blur Effect */
+  z-index: 1;
+  border-radius: 10px;
+}
+
+/* Ensure Content Stays Above the Blur */
+.hero-content, .hero-image {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Hero Content */
+.hero-content {
+  max-width: 50%;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* Subheading */
+.subheading {
+  color: #FFD700;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Heading */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Highlighted Text */
+.highlight {
+  color: #FFD700;
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.btn-outline {
+  padding: 10px 20px;
+  border: 2px solid white;
+  background: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 16px;
+  margin-right: 10px;
+  color: white;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background: #FFD700;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 16px;
+  color: black;
+}
+
+/* Hero Image */
+.hero-image {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 30% 70% 70% 30%;
+}
+
+/* Responsive Hero */
+@media (max-width: 768px) {
+  .hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 50px;
+  }
+
+  .hero-content {
+      max-width: 100%;
+  }
+
+  .hero-image img {
+      width: 250px;
+      margin-top: 20px;
+  }
+  .btn-primary {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+/* Products Section */
+.products-section {
+  background-color: #f1f0f0;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Products Container */
+.products-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Single Product Card */
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+.products-section h2{
+  font-size: 50px;
+  color: rgb(57, 57, 69);
+  font-family: "Montserrat", serif;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+ 
+  width: 50%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+ 
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Large Card (1st row) */
+.large {
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Row for 2nd, 3rd, 4th line */
+.row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .large {
+      width: 100%;
+  }
+}
+
+
+
+
+
+/* Footer Styles */
+.footer {
+  background: white;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Left Side (Profile Image) */
+.footer-left img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #ffcc00;
+}
+
+/* Center Content (Now Left-Aligned) */
+.footer-center {
+  text-align: left; /* Changed from center to left */
+  flex: 1;
+  padding: 0 30px;
+}
+
+.footer-center h2 {
+  
+  font-size: 24px;
+  margin: 0;
+}
+
+
+.footer-center h2 span {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.designation {
+  font-size: 14px;
+  color: gray;
+  margin: 5px 0;
+}
+
+hr {
+  width: 50%;
+  margin: 10px 0; /* Removed auto margin to prevent centering */
+  border: 0;
+  border-top: 2px solid #ddd;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align content */
+  gap: 8px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item i {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Right Side (Logo + Social Icons) */
+.footer-right {
+  text-align: center;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: left;
+  }
+
+  .footer-left img {
+      width: 120px;
+      height: 120px;
+  }
+
+  .footer-center {
+      padding: 20px 0;
+  }
+
+  .contact-info {
+      align-items: flex-start;
+  }
+
+  .footer-right {
+      margin-top: 20px;
+  }
+}
+
+
+
+
+/* About Us Section */
+.about-us-section {
+  padding: 60px 20px; /* Adjust as needed */
+  background-color: #f8f8f8; /* Light background for contrast */
+  text-align: center; /* Center the heading */
+}
+
+/* Main Heading */
+.about-title {
+  font-size: 70px;
+  color: rgb(24, 24, 204);
+  font-family: "Montserrat", serif;
+
+  margin-bottom: 40px;
+
+}
+
+/* Container for About Content */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;           /* Center the container */
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;  /* Align items at the top */
+  text-align: left;         /* Left-align content inside */
+}
+
+/* Left Column */
+.about-left {
+  flex: 1.5; /* Slightly wider than the right column */
+}
+
+.about-left h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  color: #2c2c2c;
+}
+
+
+.about-left p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.building-image {
+  margin-top: 20px;
+}
+
+.building-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Column */
+.about-right {
+  flex: 1; /* Slightly narrower than the left column */
+  display: flex;
+  align-items: center; /* Vertically center the stats */
+  justify-content: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.stat-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item h3 {
+  font-size: 36px;
+  color: rgb(24, 24, 204);
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text for smaller screens */
+  }
+
+  .about-left,
+  .about-right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr; /* Stack stat items vertically on very small screens */
+  }
+}
+
+
+
+
+
+
+
+/* Client Section */
+.client-section {
+  padding: 60px 20px; /* Adjust as needed */
+  background-color: #fafafa; /* Light background for contrast */
+}
+
+/* Container */
+.client-content {
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left Column (Text) */
+.client-text {
+  flex: 1.2; /* Give the text more space */
+}
+
+.client-text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  line-height: 1.3;
+}
+
+.client-text p {
+  margin-bottom: 16px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Right Column (Image) */
+.client-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .client-content {
+    flex-direction: column;
+  }
+
+  .client-text {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .client-image {
+    width: 100%;
+  }
+}
